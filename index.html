@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Ornaza MIS">
+  <meta name="theme-color" content="#d196a5">
+  <meta name="description" content="Ornaza Jewels Management Information System">
+
+  <title>Ornaza Jewels MIS</title>
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="./manifest.json">
+
+  <!-- Apple touch icon -->
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+
+  <!-- Fonts: Cormorant Garamond (headings) + Poppins (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- App stylesheet -->
+  <link rel="stylesheet" href="./css/app.css">
+</head>
+<body>
+
+  <!-- Offline banner -->
+  <div id="offline-banner" role="alert">
+    You are offline — changes will sync when connection is restored
+  </div>
+
+  <!-- Toast container -->
+  <div id="toast-container" aria-live="polite"></div>
+
+  <!-- App shell -->
+  <div id="app">
+
+    <!-- Top bar (hidden on login) -->
+    <header id="topbar">
+      <div id="topbar-brand">
+        <div class="brand-icon">OJ</div>
+        <span class="brand-name">Ornaza MIS</span>
+      </div>
+      <div id="topbar-right">
+        <div class="sync-indicator">
+          <div class="sync-dot"></div>
+          <span class="sync-text"></span>
+        </div>
+        <button class="avatar-btn" id="avatar-btn" title="Account / Logout">?</button>
+      </div>
+    </header>
+
+    <!-- Main content — views render here -->
+    <main id="main-content" role="main">
+      <!-- Loading splash -->
+      <div class="loading-full" style="height:60vh">
+        <div class="spinner"></div>
+      </div>
+    </main>
+
+    <!-- Bottom navigation (hidden on login) -->
+    <nav id="bottom-nav" role="navigation" aria-label="Main navigation">
+      <!-- Populated by app.js buildNav() after login -->
+    </nav>
+
+  </div><!-- #app -->
+
+  <!-- ── JavaScript (load order matters) ─────────────────────────────────── -->
+
+  <!-- 1. Config — must be first -->
+  <script src="./js/config.js"></script>
+
+  <!-- 2. IndexedDB layer -->
+  <script src="./js/db.js"></script>
+
+  <!-- 3. API client -->
+  <script src="./js/api.js"></script>
+
+  <!-- 4. Auth -->
+  <script src="./js/auth.js"></script>
+
+  <!-- 5. Sync engine -->
+  <script src="./js/sync.js"></script>
+
+  <!-- 6. Views -->
+  <script src="./js/views/login.js"></script>
+  <script src="./js/views/dashboard.js"></script>
+  <script src="./js/views/checkin.js"></script>
+  <script src="./js/views/employees.js"></script>
+  <script src="./js/views/attendance.js"></script>
+  <script src="./js/views/leaves.js"></script>
+  <script src="./js/views/payroll.js"></script>
+  <script src="./js/views/performance.js"></script>
+
+  <!-- 7. App router (boots everything, must be last) -->
+  <script src="./js/app.js"></script>
+
+</body>
+</html>

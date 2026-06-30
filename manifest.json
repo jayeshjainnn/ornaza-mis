@@ -1,0 +1,27 @@
+{
+  "name": "Ornaza Jewels MIS",
+  "short_name": "Ornaza MIS",
+  "description": "HR & Attendance Management System for Ornaza Jewels",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fce4e6",
+  "theme_color": "#d196a5",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "lang": "en",
+  "dir": "ltr"
+}
