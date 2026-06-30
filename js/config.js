@@ -1,3 +1,6 @@
+// Global view registry — must exist before any view file loads (app.js loads last)
+var Views = {};
+
 /**
  * config.js — Central configuration for Ornaza MIS PWA
  *
