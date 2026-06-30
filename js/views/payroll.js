@@ -4,9 +4,11 @@
  */
 Views.payroll = (function () {
   var _empMap = {};
-  var _month  = Fmt.currentMonth();
+  var _month  = null; // initialized lazily in render()
 
   function render(container) {
+    if (!_month) _month = Fmt.currentMonth();
+  var _month  = null;
     if (!Auth.canSeePayroll()) {
       container.innerHTML = '<div class="empty-state"><p>Payroll is visible to Owner only.</p></div>';
       return;
