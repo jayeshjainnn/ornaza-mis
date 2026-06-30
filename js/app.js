@@ -33,7 +33,7 @@ var Toast = (function () {
 })();
 
 // ── View registry ──────────────────────────────────────────────────────────────
-var Views = {};  // populated by each view file: Views.login = { render, onEnter, onLeave }
+// View registry is declared in config.js (loaded first) so view files can register at parse time
 
 // ── Router ─────────────────────────────────────────────────────────────────────
 var Router = (function () {
